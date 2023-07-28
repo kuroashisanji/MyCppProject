@@ -27,7 +27,7 @@ SESSION_ENGINE = 'django.contrib.sessions.backends.signed_cookies'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*', 'MyCppProject-env.eba-g9ppwc2x.us-west-2.elasticbeanstalk.com']
 
 
 # Application definition
