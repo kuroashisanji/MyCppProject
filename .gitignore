@@ -6,3 +6,5 @@
 
 /env/
 /.ebextensions/
+
+__pycache__/
