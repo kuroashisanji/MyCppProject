@@ -139,8 +139,11 @@ AWS_S3_FILE_OVERWRITE = False # - PREVENT FILE OVERWRITES
 
 #media files
 
+# DEFAULT_FILE_STORAGE = 'MyCppProject.media.MediaStorage'
+# MEDIA_URL= '/media/'
+# MEDIA_ROOT= os.path.join(BASE_DIR,'media')
 DEFAULT_FILE_STORAGE = 'MyCppProject.media.MediaStorage'
-MEDIA_URL= '/media/'
+MEDIA_URL= 'https://%s.s3.amazonaws.com/media/' % AWS_STORAGE_BUCKET_NAME
 MEDIA_ROOT= os.path.join(BASE_DIR,'media')
 
 # Default primary key field type
