@@ -1,0 +1,39 @@
+{% extends 'MyShopApp/basic.html' %}
+{% block css %}{% endblock %}
+{% block body %}
+<div class="container">
+  <h1>Search Results</h1>
+  <p>Showing results for "{{ query }}"</p>
+  <div class="row">
+    {% if products %}
+      {% for product in products %}
+        <div class="col-md-3">
+          <div class="card">
+            <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.product_name }}" />
+            <div class="card-body">
+              <h5 class="card-title" id="namepr{{product.id}}">
+                {{ product.product_name }}
+              </h5>
+              <p class="card-text">{{ product.desc }}</p>
+              <span id="divpr{{product.id}}" class="divpr">
+                <button id="pr{{ product.id }}" class="btn btn-primary cart">
+                  Add To Cart
+                </button>
+              </span>
+              <a href="{% url 'ProductView' product.id %}"
+                ><button id="qv{{ product.id }}" class="btn btn-primary cart">
+                  Quick View
+                </button></a
+              >
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    {% else %}
+      <p>No results found.</p>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}
+{% block js %}
+{% endblock %}
